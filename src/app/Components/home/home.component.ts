@@ -9,19 +9,19 @@ import { VacanciesService } from 'src/app/Services';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  @ViewChild('form') form: NgForm
+  @ViewChild('form') form: NgForm;
   constructor(
-    private router: Router,
-    private vacancyService: VacanciesService
+      private vacancyService: VacanciesService,
+      private router: Router
     ) { }
 
   ngOnInit(): void {
   }
 
   async jobSearchSubmit(){
-    const { title, city } = this.form.form.value;
+    const {city, title} = this.form.form.value;
     await this.vacancyService.SearchVacancy(title, city);
-    this.router.navigate(['/show-jobs'])
+    this.router.navigate(['/show-jobs']);
   }
 
 }

@@ -48,7 +48,7 @@
             <div class="text-center">
                 <p class="rounded-circle bg-white job-desc"><i class="fas fa-user-md text-primary"></i></p>
                 <div class="card-body">
-                    <h6 class="card-subtitle  text-muted">{{vacancy.gender}}</h6>
+                    <h6 class="card-subtitle  text-muted">{{vacancy.gender === 'both' ? 'male/female' : vacancy.gender}}</h6>
                     <small class="text-muted ">Gender Requirement</small>
                 </div>
             </div>
@@ -62,7 +62,7 @@
 
     <div class="text-center jumbotron bg-transparent">
         <h2 class="display-4 text-primary mb-3">Required Skills</h2>
-        <span *ngFor="let s of vacancy.skills" class="border border-primary rounded badge text-primary mr-3">{{s === 'both' ? 'female/male' : s}}</span>
+        <span *ngFor="let s of vacancy.skills" class="border border-primary rounded badge text-primary mr-3">{{s}}</span>
     </div>
 
     </div>

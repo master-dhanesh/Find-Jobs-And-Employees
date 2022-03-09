@@ -10,20 +10,20 @@ import { VacanciesService } from 'src/app/Services';
 export class ShowJobsComponent implements OnInit {
   matchedVacancies;
   constructor(
-    private router: Router,
-    private vacancyService: VacanciesService
+    private vacancyService: VacanciesService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
     this.vacancyService.searchVacancy.subscribe( value => {
-        this.matchedVacancies = value;
+      this.matchedVacancies = value;
+      console.log(value);
     })
-
   }
 
   vacancyDetails(vacancy){
     this.vacancyService.activeVacancy.next(vacancy);
-    this.router.navigate(['/jobs-desc'])
+    this.router.navigate(['/jobs-desc']);
   }
 
 }
